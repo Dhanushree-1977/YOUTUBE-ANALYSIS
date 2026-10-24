@@ -1,0 +1,21 @@
+trending_rank,video_id,title,channel_title,published_at,category_id,category_name,views,likes,comments,hours_since_published,views_per_hour,like_ratio,comment_ratio,tag_count,tags
+1,trend_101,Next-Gen Gemini 2.5 Ultra: The AI Revolution is Here!,Tech Pulse,2026-10-23T12:48:00Z,28,Science & Technology,4906099,435362,74209,5.2,943480,8.87,1.51,5,AI|Gemini|Google|Tech|Future
+2,trend_102,MrBeast: I Survived 100 Days Inside an Underground Bunker,MrBeast,2026-10-23T06:30:00Z,24,Entertainment,18330699,1180957,170598,11.5,1593973,6.44,0.93,4,MrBeast|Challenge|Survival|Crazy
+3,trend_103,Kendrick Lamar & Drake: The Final Resolution (Official Video),Kendrick Lamar,2026-10-23T10:00:00Z,10,Music,14602959,907249,140934,8.0,1825369,6.21,0.97,5,Rap|Music|HipHop|Kendrick|Drake
+4,trend_104,Apple M5 MacBook Pro Review: Is Intel Done For Good?,MKBHD,2026-10-23T03:48:00Z,28,Science & Technology,3255497,163411,9613,14.2,229260,5.02,0.3,5,Apple|M5|MacBook|Tech|Review
+5,trend_105,Champions League: Real Madrid vs Bayern Munich (4-3 Thriller Highlights),UEFA Highlights,2026-10-23T11:12:00Z,17,Sports,7922126,676638,47514,6.8,1165018,8.54,0.6,4,Football|ChampionsLeague|RealMadrid|Goals
+6,trend_106,GTA 6: Official Gameplay Breakdown & World Map Secrets,IGN Gaming,2026-10-23T08:36:00Z,20,Gaming,9499641,431992,67770,9.4,1010600,4.55,0.71,5,GTA6|Rockstar|Gaming|Trailer|Walkthrough
+7,trend_107,15-Minute Easy Dinner That Changed Italian Cooking Forever,Gordan Ramsay Kitchen,2026-10-23T00:00:00Z,26,Howto & Style,2067069,156093,22110,18.0,114837,7.55,1.07,5,Cooking|Recipe|Italian|Pasta|Chef
+8,trend_108,SpaceX Starship Orbital Catch: Unbelievable Historic Footage,SpaceX,2026-10-23T10:30:00Z,28,Science & Technology,6312089,482830,31705,7.5,841611,7.65,0.5,5,SpaceX|Starship|ElonMusk|Rocket|Launch
+9,trend_109,Minecraft 2.0 Official Update Showcase: Everything New!,DanTDM,2026-10-23T05:00:00Z,20,Gaming,4239704,325091,40114,13.0,326131,7.67,0.95,4,Minecraft|Update|Gaming|Blocks
+10,trend_110,Taylor Swift: The Eras Tour Acoustic Vault Live Performance,Taylor Swift,2026-10-23T06:00:00Z,10,Music,11274876,956559,156501,12.0,939573,8.48,1.39,5,TaylorSwift|ErasTour|Music|Live|Pop
+11,trend_111,Scientists Discover Clean Fusion Energy Breakthrough,Veritasium,2026-10-22T20:00:00Z,27,Education,2875602,214912,19588,22.0,130709,7.47,0.68,4,Science|Physics|Energy|Veritasium
+12,trend_112,World's Deepest Underwater Hotel: 48 Hours Submerged,Yes Theory,2026-10-23T01:30:00Z,19,Travel & Events,3414069,203704,32729,16.5,206913,5.97,0.96,4,Travel|Adventure|Underwater|Hotel
+13,trend_113,iPhone 18 Ultra vs Samsung S26 Ultra: Ultimate Camera Test,Dave2D,2026-10-22T23:00:00Z,28,Science & Technology,2248815,94060,6748,19.0,118358,4.18,0.3,4,iPhone|Samsung|Smartphone|Camera
+14,trend_114,Elden Ring DLC 2: First 30 Minutes of Brutal Gameplay,VaatiVidya,2026-10-23T03:00:00Z,20,Gaming,3231137,270284,18792,15.0,215409,8.36,0.58,4,EldenRing|Gaming|Lore|BossFight
+15,trend_115,Formula 1: Las Vegas Grand Prix Pole Position Lap (Onboard),Formula 1,2026-10-23T07:30:00Z,17,Sports,2690469,113328,19659,10.5,256235,4.21,0.73,5,F1|Formula1|Racing|Speed|LasVegas
+16,trend_116,I Learned Quantum Computing in 30 Days (And Built a Project),Fireship,2026-10-22T21:00:00Z,27,Education,1896937,124823,21972,21.0,90330,6.58,1.16,4,Coding|Quantum|ComputerScience|Fireship
+17,trend_117,Street Food in Tokyo at 3 AM: Secret Ramen Shop,Mark Wiens,2026-10-22T18:30:00Z,19,Travel & Events,2523189,173522,12291,23.5,107369,6.88,0.49,5,Food|Tokyo|Japan|Ramen|StreetFood
+18,trend_118,Billie Eilish: Surprise Album Listening Party (Live Stream),Billie Eilish,2026-10-23T08:00:00Z,10,Music,8200957,664012,73333,10.0,820095,8.1,0.89,4,BillieEilish|Music|Album|Live
+19,trend_119,The Dark Secret Behind Modern Fast Fashion,Johnny Harris,2026-10-23T01:00:00Z,25,News & Politics,3719541,332941,41677,17.0,218796,8.95,1.12,4,Documentary|Fashion|Economy|Investigation
+20,trend_120,Why Everyone is Moving to Linux in 2026,NetworkChuck,2026-10-22T16:00:00Z,28,Science & Technology,1816502,97689,15338,26.0,69865,5.38,0.84,4,Linux|Tech|OpenSource|Cybersecurity

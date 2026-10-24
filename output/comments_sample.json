@@ -1,0 +1,117 @@
+{
+    "status": "success",
+    "total_comments": 15,
+    "positive_count": 7,
+    "neutral_count": 4,
+    "negative_count": 4,
+    "positive_pct": 46.7,
+    "neutral_pct": 26.7,
+    "negative_pct": 26.7,
+    "sample_comments": [
+        {
+            "author": "Alex M.",
+            "text": "This tutorial was extremely helpful! Finally understood how the uploads playlist pagination works.",
+            "likes": 342,
+            "sentiment": "Positive",
+            "score": 1.0
+        },
+        {
+            "author": "DevCoder",
+            "text": "The explanation at 12:40 was confusing, had to rewind 3 times.",
+            "likes": 45,
+            "sentiment": "Negative",
+            "score": -1.0
+        },
+        {
+            "author": "Sarah Jenkins",
+            "text": "The video is about 10 minutes long and covers basic concepts.",
+            "likes": 12,
+            "sentiment": "Neutral",
+            "score": 0.0
+        },
+        {
+            "author": "TechEnthusiast99",
+            "text": "Awesome presentation! Clear audio, concise slides, and practical code examples.",
+            "likes": 189,
+            "sentiment": "Positive",
+            "score": 0.33
+        },
+        {
+            "author": "PythonGeek",
+            "text": "Best breakdown of Random Forest regression vs median baseline on YouTube.",
+            "likes": 94,
+            "sentiment": "Positive",
+            "score": 1.0
+        },
+        {
+            "author": "Viewer_404",
+            "text": "Terrible microphone quality during the first two minutes, but the coding part was okay.",
+            "likes": 28,
+            "sentiment": "Negative",
+            "score": -1.0
+        },
+        {
+            "author": "Elena Rostova",
+            "text": "Loved the dark navy theme and the clean data quality report table!",
+            "likes": 77,
+            "sentiment": "Positive",
+            "score": 1.0
+        },
+        {
+            "author": "DataDan",
+            "text": "Can you explain how engagement rate is calculated when a video has zero comments?",
+            "likes": 19,
+            "sentiment": "Neutral",
+            "score": 0.0
+        },
+        {
+            "author": "Mark B.",
+            "text": "Waste of time honestly, you skipped all the difficult parts.",
+            "likes": 11,
+            "sentiment": "Negative",
+            "score": -1.0
+        },
+        {
+            "author": "Sophie Chen",
+            "text": "Thank you so much! This helped me pass my data science assignment.",
+            "likes": 215,
+            "sentiment": "Positive",
+            "score": 1.0
+        },
+        {
+            "author": "CodeWizard",
+            "text": "Standard tutorial, nothing special but works fine.",
+            "likes": 8,
+            "sentiment": "Neutral",
+            "score": 0.0
+        },
+        {
+            "author": "Liam O'Connor",
+            "text": "Brilliant insights into publishing time patterns and why correlation doesn't mean causation.",
+            "likes": 152,
+            "sentiment": "Positive",
+            "score": 1.0
+        },
+        {
+            "author": "GamingFanatic",
+            "text": "Audio is completely broken in the second half.",
+            "likes": 31,
+            "sentiment": "Negative",
+            "score": -1.0
+        },
+        {
+            "author": "Maria Garcia",
+            "text": "Fantastic dashboard layout. Everything is so easy to navigate.",
+            "likes": 64,
+            "sentiment": "Positive",
+            "score": 1.0
+        },
+        {
+            "author": "CuriousMind",
+            "text": "Where can we download the cleaned CSV dataset?",
+            "likes": 15,
+            "sentiment": "Neutral",
+            "score": 0.0
+        }
+    ]
+}

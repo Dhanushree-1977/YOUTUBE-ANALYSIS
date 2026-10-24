@@ -1,0 +1,1460 @@
+{
+  "snapshots": [
+    {
+      "timestamp": "2026-10-21T16:52:44.460349+00:00",
+      "readable_time": "2026-10-21 22:22:44",
+      "label": "T-48h Baseline Observation",
+      "video_count": 120,
+      "data": {
+        "vid_1000": {
+          "title": "Next-Gen AI with Gemini API - Episode #1",
+          "views": 391135,
+          "likes": 15257,
+          "comments": 2169
+        },
+        "vid_1001": {
+          "title": "Android App Architecture Guide - Episode #2",
+          "views": 181116,
+          "likes": 6496,
+          "comments": 425
+        },
+        "vid_1002": {
+          "title": "Web Vitals and SEO Optimization - Episode #3",
+          "views": 210122,
+          "likes": 10574,
+          "comments": 887
+        },
+        "vid_1003": {
+          "title": "Building Fast Web Apps with Chrome - Episode #4",
+          "views": 98859,
+          "likes": 3978,
+          "comments": 430
+        },
+        "vid_1004": {
+          "title": "Kotlin Coroutines Made Easy - Episode #5",
+          "views": 292344,
+          "likes": 20547,
+          "comments": 746
+        },
+        "vid_1005": {
+          "title": "Web Vitals and SEO Optimization - Episode #6",
+          "views": 276614,
+          "likes": 18479,
+          "comments": 2294
+        },
+        "vid_1006": {
+          "title": "Flutter Widget Tutorial - Episode #7",
+          "views": 136858,
+          "likes": 2912,
+          "comments": 140
+        },
+        "vid_1007": {
+          "title": "Python 3.12 Deep Dive - Episode #8",
+          "views": 105065,
+          "likes": 5755,
+          "comments": 511
+        },
+        "vid_1008": {
+          "title": "Modern JavaScript Tips & Tricks - Episode #9",
+          "views": 6878,
+          "likes": 396,
+          "comments": 38
+        },
+        "vid_1009": {
+          "title": "Modern JavaScript Tips & Tricks - Episode #10",
+          "views": 287379,
+          "likes": 6037,
+          "comments": 557
+        },
+        "vid_1010": {
+          "title": "Web Vitals and SEO Optimization - Episode #11",
+          "views": 349917,
+          "likes": 21829,
+          "comments": 1754
+        },
+        "vid_1011": {
+          "title": "Docker & Kubernetes on GCP - Episode #12",
+          "views": 23518,
+          "likes": 1261,
+          "comments": 165
+        },
+        "vid_1012": {
+          "title": "Web Vitals and SEO Optimization - Episode #13",
+          "views": 84432,
+          "likes": 5316,
+          "comments": 555
+        },
+        "vid_1013": {
+          "title": "Firebase Realtime Database Setup - Episode #14",
+          "views": 39970,
+          "likes": 1703,
+          "comments": 54
+        },
+        "vid_1014": {
+          "title": "Building Fast Web Apps with Chrome - Episode #15",
+          "views": 389935,
+          "likes": 25466,
+          "comments": 2340
+        },
+        "vid_1015": {
+          "title": "Google Cloud Platform Fundamentals - Episode #16",
+          "views": 376406,
+          "likes": 15435,
+          "comments": 1755
+        },
+        "vid_1016": {
+          "title": "Python 3.12 Deep Dive - Episode #17",
+          "views": 231563,
+          "likes": 9664,
+          "comments": 769
+        },
+        "vid_1017": {
+          "title": "Docker & Kubernetes on GCP - Episode #18",
+          "views": 187651,
+          "likes": 3964,
+          "comments": 419
+        },
+        "vid_1018": {
+          "title": "Kotlin Coroutines Made Easy - Episode #19",
+          "views": 132776,
+          "likes": 5148,
+          "comments": 694
+        },
+        "vid_1019": {
+          "title": "Building Fast Web Apps with Chrome - Episode #20",
+          "views": 373750,
+          "likes": 22676,
+          "comments": 1838
+        },
+        "vid_1020": {
+          "title": "Firebase Realtime Database Setup - Episode #21",
+          "views": 65772,
+          "likes": 2962,
+          "comments": 207
+        },
+        "vid_1021": {
+          "title": "Docker & Kubernetes on GCP - Episode #22",
+          "views": 204789,
+          "likes": 10240,
+          "comments": 1011
+        },
+        "vid_1022": {
+          "title": "Web Vitals and SEO Optimization - Episode #23",
+          "views": 208776,
+          "likes": 7031,
+          "comments": 1000
+        },
+        "vid_1023": {
+          "title": "Next-Gen AI with Gemini API - Episode #24",
+          "views": 56273,
+          "likes": 3535,
+          "comments": 117
+        },
+        "vid_1024": {
+          "title": "Building Fast Web Apps with Chrome - Episode #25",
+          "views": 30873,
+          "likes": 674,
+          "comments": 31
+        },
+        "vid_1025": {
+          "title": "Firebase Realtime Database Setup - Episode #26",
+          "views": 121113,
+          "likes": 8902,
+          "comments": 1320
+        },
+        "vid_1026": {
+          "title": "Building Fast Web Apps with Chrome - Episode #27",
+          "views": 43122,
+          "likes": 3064,
+          "comments": 123
+        },
+        "vid_1027": {
+          "title": "Docker & Kubernetes on GCP - Episode #28",
+          "views": 90273,
+          "likes": 5964,
+          "comments": 631
+        },
+        "vid_1028": {
+          "title": "Web Vitals and SEO Optimization - Episode #29",
+          "views": 135175,
+          "likes": 6210,
+          "comments": 460
+        },
+        "vid_1029": {
+          "title": "Firebase Realtime Database Setup - Episode #30",
+          "views": 231761,
+          "likes": 17004,
+          "comments": 1956
+        },
+        "vid_1030": {
+          "title": "Next-Gen AI with Gemini API - Episode #31",
+          "views": 357217,
+          "likes": 17673,
+          "comments": 1056
+        },
+        "vid_1031": {
+          "title": "Android App Architecture Guide - Episode #32",
+          "views": 90263,
+          "likes": 4609,
+          "comments": 638
+        },
+        "vid_1032": {
+          "title": "Google Cloud Platform Fundamentals - Episode #33",
+          "views": 246307,
+          "likes": 14885,
+          "comments": 1956
+        },
+        "vid_1033": {
+          "title": "Python 3.12 Deep Dive - Episode #34",
+          "views": 15976,
+          "likes": 932,
+          "comments": 69
+        },
+        "vid_1034": {
+          "title": "Python 3.12 Deep Dive - Episode #35",
+          "views": 133085,
+          "likes": 7858,
+          "comments": 733
+        },
+        "vid_1035": {
+          "title": "Python 3.12 Deep Dive - Episode #36",
+          "views": 93820,
+          "likes": 2819,
+          "comments": 99
+        },
+        "vid_1036": {
+          "title": "Google Cloud Platform Fundamentals - Episode #37",
+          "views": 382586,
+          "likes": 23077,
+          "comments": 1964
+        },
+        "vid_1037": {
+          "title": "Python 3.12 Deep Dive - Episode #38",
+          "views": 38126,
+          "likes": 3007,
+          "comments": 234
+        },
+        "vid_1038": {
+          "title": "Flutter Widget Tutorial - Episode #39",
+          "views": 108801,
+          "likes": 7183,
+          "comments": 420
+        },
+        "vid_1039": {
+          "title": "Building Fast Web Apps with Chrome - Episode #40",
+          "views": 225998,
+          "likes": 8592,
+          "comments": 418
+        },
+        "vid_1040": {
+          "title": "Docker & Kubernetes on GCP - Episode #41",
+          "views": 253987,
+          "likes": 8229,
+          "comments": 751
+        },
+        "vid_1041": {
+          "title": "Modern JavaScript Tips & Tricks - Episode #42",
+          "views": 108461,
+          "likes": 5634,
+          "comments": 556
+        },
+        "vid_1042": {
+          "title": "Web Vitals and SEO Optimization - Episode #43",
+          "views": 194203,
+          "likes": 14028,
+          "comments": 1658
+        },
+        "vid_1043": {
+          "title": "Firebase Realtime Database Setup - Episode #44",
+          "views": 56714,
+          "likes": 1334,
+          "comments": 180
+        },
+        "vid_1044": {
+          "title": "Web Vitals and SEO Optimization - Episode #45",
+          "views": 202254,
+          "likes": 7153,
+          "comments": 531
+        },
+        "vid_1045": {
+          "title": "TensorFlow ML Crash Course - Episode #46",
+          "views": 160427,
+          "likes": 12682,
+          "comments": 662
+        },
+        "vid_1046": {
+          "title": "Docker & Kubernetes on GCP - Episode #47",
+          "views": 105252,
+          "likes": 3879,
+          "comments": 484
+        },
+        "vid_1047": {
+          "title": "Modern JavaScript Tips & Tricks - Episode #48",
+          "views": 189144,
+          "likes": 8790,
+          "comments": 1075
+        },
+        "vid_1048": {
+          "title": "Firebase Realtime Database Setup - Episode #49",
+          "views": 316700,
+          "likes": 7172,
+          "comments": 868
+        },
+        "vid_1049": {
+          "title": "Building Fast Web Apps with Chrome - Episode #50",
+          "views": 111928,
+          "likes": 3773,
+          "comments": 143
+        },
+        "vid_1050": {
+          "title": "TensorFlow ML Crash Course - Episode #51",
+          "views": 341770,
+          "likes": 24299,
+          "comments": 2214
+        },
+        "vid_1051": {
+          "title": "Modern JavaScript Tips & Tricks - Episode #52",
+          "views": 241604,
+          "likes": 6413,
+          "comments": 338
+        },
+        "vid_1052": {
+          "title": "Firebase Realtime Database Setup - Episode #53",
+          "views": 78960,
+          "likes": 5975,
+          "comments": 485
+        },
+        "vid_1053": {
+          "title": "Google Cloud Platform Fundamentals - Episode #54",
+          "views": 48889,
+          "likes": 3581,
+          "comments": 472
+        },
+        "vid_1054": {
+          "title": "Next-Gen AI with Gemini API - Episode #55",
+          "views": 81517,
+          "likes": 5642,
+          "comments": 223
+        },
+        "vid_1055": {
+          "title": "Modern JavaScript Tips & Tricks - Episode #56",
+          "views": 326712,
+          "likes": 15848,
+          "comments": 1073
+        },
+        "vid_1056": {
+          "title": "Modern JavaScript Tips & Tricks - Episode #57",
+          "views": 218294,
+          "likes": 16263,
+          "comments": 2280
+        },
+        "vid_1057": {
+          "title": "Docker & Kubernetes on GCP - Episode #58",
+          "views": 78601,
+          "likes": 3057,
+          "comments": 317
+        },
+        "vid_1058": {
+          "title": "Google Cloud Platform Fundamentals - Episode #59",
+          "views": 360442,
+          "likes": 22525,
+          "comments": 1466
+        },
+        "vid_1059": {
+          "title": "Android App Architecture Guide - Episode #60",
+          "views": 262102,
+          "likes": 17028,
+          "comments": 2517
+        },
+        "vid_1060": {
+          "title": "Firebase Realtime Database Setup - Episode #61",
+          "views": 187796,
+          "likes": 13605,
+          "comments": 1748
+        },
+        "vid_1061": {
+          "title": "Android App Architecture Guide - Episode #62",
+          "views": 120247,
+          "likes": 3501,
+          "comments": 524
+        },
+        "vid_1062": {
+          "title": "Python 3.12 Deep Dive - Episode #63",
+          "views": 144446,
+          "likes": 10487,
+          "comments": 1041
+        },
+        "vid_1063": {
+          "title": "Docker & Kubernetes on GCP - Episode #64",
+          "views": 106170,
+          "likes": 5325,
+          "comments": 447
+        },
+        "vid_1064": {
+          "title": "Google Cloud Platform Fundamentals - Episode #65",
+          "views": 395161,
+          "likes": 23181,
+          "comments": 1003
+        },
+        "vid_1065": {
+          "title": "Firebase Realtime Database Setup - Episode #66",
+          "views": 346287,
+          "likes": 17766,
+          "comments": 741
+        },
+        "vid_1066": {
+          "title": "TensorFlow ML Crash Course - Episode #67",
+          "views": 254126,
+          "likes": 8431,
+          "comments": 371
+        },
+        "vid_1067": {
+          "title": "Firebase Realtime Database Setup - Episode #68",
+          "views": 385525,
+          "likes": 16719,
+          "comments": 2443
+        },
+        "vid_1068": {
+          "title": "Python 3.12 Deep Dive - Episode #69",
+          "views": 165272,
+          "likes": 12438,
+          "comments": 1065
+        },
+        "vid_1069": {
+          "title": "Building Fast Web Apps with Chrome - Episode #70",
+          "views": 320402,
+          "likes": 21376,
+          "comments": 1571
+        },
+        "vid_1070": {
+          "title": "Flutter Widget Tutorial - Episode #71",
+          "views": 170536,
+          "likes": 9016,
+          "comments": 501
+        },
+        "vid_1071": {
+          "title": "TensorFlow ML Crash Course - Episode #72",
+          "views": 72020,
+          "likes": 4371,
+          "comments": 164
+        },
+        "vid_1072": {
+          "title": "Flutter Widget Tutorial - Episode #73",
+          "views": 137398,
+          "likes": 3446,
+          "comments": 379
+        },
+        "vid_1073": {
+          "title": "Kotlin Coroutines Made Easy - Episode #74",
+          "views": 69657,
+          "likes": 1789,
+          "comments": 59
+        },
+        "vid_1074": {
+          "title": "TensorFlow ML Crash Course - Episode #75",
+          "views": 240397,
+          "likes": 10685,
+          "comments": 1136
+        },
+        "vid_1075": {
+          "title": "Kotlin Coroutines Made Easy - Episode #76",
+          "views": 6534,
+          "likes": 222,
+          "comments": 22
+        },
+        "vid_1076": {
+          "title": "Android App Architecture Guide - Episode #77",
+          "views": 77124,
+          "likes": 3787,
+          "comments": 278
+        },
+        "vid_1077": {
+          "title": "Next-Gen AI with Gemini API - Episode #78",
+          "views": 207423,
+          "likes": 11440,
+          "comments": 1549
+        },
+        "vid_1078": {
+          "title": "Google Cloud Platform Fundamentals - Episode #79",
+          "views": 259138,
+          "likes": 6908,
+          "comments": 477
+        },
+        "vid_1079": {
+          "title": "Android App Architecture Guide - Episode #80",
+          "views": 228321,
+          "likes": 6044,
+          "comments": 429
+        },
+        "vid_1080": {
+          "title": "Next-Gen AI with Gemini API - Episode #81",
+          "views": 377087,
+          "likes": 24016,
+          "comments": 1804
+        },
+        "vid_1081": {
+          "title": "TensorFlow ML Crash Course - Episode #82",
+          "views": 231844,
+          "likes": 5790,
+          "comments": 614
+        },
+        "vid_1082": {
+          "title": "TensorFlow ML Crash Course - Episode #83",
+          "views": 105912,
+          "likes": 8319,
+          "comments": 275
+        },
+        "vid_1083": {
+          "title": "Building Fast Web Apps with Chrome - Episode #84",
+          "views": 194259,
+          "likes": 7743,
+          "comments": 330
+        },
+        "vid_1084": {
+          "title": "Building Fast Web Apps with Chrome - Episode #85",
+          "views": 210426,
+          "likes": 14198,
+          "comments": 991
+        },
+        "vid_1085": {
+          "title": "Firebase Realtime Database Setup - Episode #86",
+          "views": 178984,
+          "likes": 7764,
+          "comments": 328
+        },
+        "vid_1086": {
+          "title": "Firebase Realtime Database Setup - Episode #87",
+          "views": 217422,
+          "likes": 9602,
+          "comments": 755
+        },
+        "vid_1087": {
+          "title": "Flutter Widget Tutorial - Episode #88",
+          "views": 62732,
+          "likes": 1985,
+          "comments": 244
+        },
+        "vid_1088": {
+          "title": "Google Cloud Platform Fundamentals - Episode #89",
+          "views": 38635,
+          "likes": 1254,
+          "comments": 38
+        },
+        "vid_1089": {
+          "title": "Android App Architecture Guide - Episode #90",
+          "views": 276762,
+          "likes": 19444,
+          "comments": 2409
+        },
+        "vid_1090": {
+          "title": "TensorFlow ML Crash Course - Episode #91",
+          "views": 291278,
+          "likes": 20286,
+          "comments": 1477
+        },
+        "vid_1091": {
+          "title": "Python 3.12 Deep Dive - Episode #92",
+          "views": 253961,
+          "likes": 11665,
+          "comments": 1214
+        },
+        "vid_1092": {
+          "title": "TensorFlow ML Crash Course - Episode #93",
+          "views": 238188,
+          "likes": 16571,
+          "comments": 1138
+        },
+        "vid_1093": {
+          "title": "TensorFlow ML Crash Course - Episode #94",
+          "views": 261855,
+          "likes": 17754,
+          "comments": 551
+        },
+        "vid_1094": {
+          "title": "Next-Gen AI with Gemini API - Episode #95",
+          "views": 302727,
+          "likes": 6274,
+          "comments": 681
+        },
+        "vid_1095": {
+          "title": "Next-Gen AI with Gemini API - Episode #96",
+          "views": 70114,
+          "likes": 5097,
+          "comments": 667
+        },
+        "vid_1096": {
+          "title": "TensorFlow ML Crash Course - Episode #97",
+          "views": 379529,
+          "likes": 10120,
+          "comments": 1299
+        },
+        "vid_1097": {
+          "title": "Firebase Realtime Database Setup - Episode #98",
+          "views": 108774,
+          "likes": 5675,
+          "comments": 328
+        },
+        "vid_1098": {
+          "title": "Flutter Widget Tutorial - Episode #99",
+          "views": 353749,
+          "likes": 11542,
+          "comments": 1381
+        },
+        "vid_1099": {
+          "title": "Modern JavaScript Tips & Tricks - Episode #100",
+          "views": 219406,
+          "likes": 7996,
+          "comments": 979
+        },
+        "vid_1100": {
+          "title": "Next-Gen AI with Gemini API - Episode #101",
+          "views": 317804,
+          "likes": 14926,
+          "comments": 754
+        },
+        "vid_1101": {
+          "title": "Building Fast Web Apps with Chrome - Episode #102",
+          "views": 282419,
+          "likes": 20557,
+          "comments": 2088
+        },
+        "vid_1102": {
+          "title": "Web Vitals and SEO Optimization - Episode #103",
+          "views": 209915,
+          "likes": 16107,
+          "comments": 1460
+        },
+        "vid_1103": {
+          "title": "Google Cloud Platform Fundamentals - Episode #104",
+          "views": 62854,
+          "likes": 1501,
+          "comments": 107
+        },
+        "vid_1104": {
+          "title": "Next-Gen AI with Gemini API - Episode #105",
+          "views": 193671,
+          "likes": 7584,
+          "comments": 850
+        },
+        "vid_1105": {
+          "title": "Web Vitals and SEO Optimization - Episode #106",
+          "views": 295357,
+          "likes": 20128,
+          "comments": 1844
+        },
+        "vid_1106": {
+          "title": "Kotlin Coroutines Made Easy - Episode #107",
+          "views": 253984,
+          "likes": 5952,
+          "comments": 226
+        },
+        "vid_1107": {
+          "title": "Web Vitals and SEO Optimization - Episode #108",
+          "views": 50929,
+          "likes": 1272,
+          "comments": 86
+        },
+        "vid_1108": {
+          "title": "Python 3.12 Deep Dive - Episode #109",
+          "views": 275071,
+          "likes": 6860,
+          "comments": 450
+        },
+        "vid_1109": {
+          "title": "Python 3.12 Deep Dive - Episode #110",
+          "views": 102972,
+          "likes": 5805,
+          "comments": 641
+        },
+        "vid_1110": {
+          "title": "Kotlin Coroutines Made Easy - Episode #111",
+          "views": 143288,
+          "likes": 4914,
+          "comments": 308
+        },
+        "vid_1111": {
+          "title": "Firebase Realtime Database Setup - Episode #112",
+          "views": 194302,
+          "likes": 4941,
+          "comments": 538
+        },
+        "vid_1112": {
+          "title": "TensorFlow ML Crash Course - Episode #113",
+          "views": 180300,
+          "likes": 4872,
+          "comments": 638
+        },
+        "vid_1113": {
+          "title": "Firebase Realtime Database Setup - Episode #114",
+          "views": 121656,
+          "likes": 7430,
+          "comments": 958
+        },
+        "vid_1114": {
+          "title": "Python 3.12 Deep Dive - Episode #115",
+          "views": 262886,
+          "likes": 18238,
+          "comments": 2424
+        },
+        "vid_1115": {
+          "title": "Flutter Widget Tutorial - Episode #116",
+          "views": 53638,
+          "likes": 3771,
+          "comments": 480
+        },
+        "vid_1116": {
+          "title": "Docker & Kubernetes on GCP - Episode #117",
+          "views": 352161,
+          "likes": 20489,
+          "comments": 1980
+        },
+        "vid_1117": {
+          "title": "Building Fast Web Apps with Chrome - Episode #118",
+          "views": 64303,
+          "likes": 4009,
+          "comments": 168
+        },
+        "vid_1118": {
+          "title": "TensorFlow ML Crash Course - Episode #119",
+          "views": 285683,
+          "likes": 17650,
+          "comments": 555
+        },
+        "vid_1119": {
+          "title": "Web Vitals and SEO Optimization - Episode #120",
+          "views": 284562,
+          "likes": 10521,
+          "comments": 1265
+        }
+      }
+    },
+    {
+      "timestamp": "2026-10-23T16:52:44.456331+00:00",
+      "readable_time": "2026-10-23 22:22:44",
+      "label": "T-0h Current Live State",
+      "video_count": 120,
+      "data": {
+        "vid_1000": {
+          "title": "Next-Gen AI with Gemini API - Episode #1",
+          "views": 444472,
+          "likes": 17338,
+          "comments": 2465
+        },
+        "vid_1001": {
+          "title": "Android App Architecture Guide - Episode #2",
+          "views": 205814,
+          "likes": 7382,
+          "comments": 484
+        },
+        "vid_1002": {
+          "title": "Web Vitals and SEO Optimization - Episode #3",
+          "views": 238776,
+          "likes": 12017,
+          "comments": 1008
+        },
+        "vid_1003": {
+          "title": "Building Fast Web Apps with Chrome - Episode #4",
+          "views": 112340,
+          "likes": 4521,
+          "comments": 489
+        },
+        "vid_1004": {
+          "title": "Kotlin Coroutines Made Easy - Episode #5",
+          "views": 332210,
+          "likes": 23349,
+          "comments": 848
+        },
+        "vid_1005": {
+          "title": "Web Vitals and SEO Optimization - Episode #6",
+          "views": 314335,
+          "likes": 20999,
+          "comments": 2607
+        },
+        "vid_1006": {
+          "title": "Flutter Widget Tutorial - Episode #7",
+          "views": 155521,
+          "likes": 3310,
+          "comments": 160
+        },
+        "vid_1007": {
+          "title": "Python 3.12 Deep Dive - Episode #8",
+          "views": 119393,
+          "likes": 6540,
+          "comments": 581
+        },
+        "vid_1008": {
+          "title": "Modern JavaScript Tips & Tricks - Episode #9",
+          "views": 7816,
+          "likes": 451,
+          "comments": 44
+        },
+        "vid_1009": {
+          "title": "Modern JavaScript Tips & Tricks - Episode #10",
+          "views": 326568,
+          "likes": 6861,
+          "comments": 633
+        },
+        "vid_1010": {
+          "title": "Web Vitals and SEO Optimization - Episode #11",
+          "views": 397634,
+          "likes": 24806,
+          "comments": 1994
+        },
+        "vid_1011": {
+          "title": "Docker & Kubernetes on GCP - Episode #12",
+          "views": 26725,
+          "likes": 1434,
+          "comments": 188
+        },
+        "vid_1012": {
+          "title": "Web Vitals and SEO Optimization - Episode #13",
+          "views": 95946,
+          "likes": 6041,
+          "comments": 631
+        },
+        "vid_1013": {
+          "title": "Firebase Realtime Database Setup - Episode #14",
+          "views": 45421,
+          "likes": 1936,
+          "comments": 62
+        },
+        "vid_1014": {
+          "title": "Building Fast Web Apps with Chrome - Episode #15",
+          "views": 443108,
+          "likes": 28939,
+          "comments": 2660
+        },
+        "vid_1015": {
+          "title": "Google Cloud Platform Fundamentals - Episode #16",
+          "views": 427735,
+          "likes": 17540,
+          "comments": 1995
+        },
+        "vid_1016": {
+          "title": "Python 3.12 Deep Dive - Episode #17",
+          "views": 263140,
+          "likes": 10982,
+          "comments": 874
+        },
+        "vid_1017": {
+          "title": "Docker & Kubernetes on GCP - Episode #18",
+          "views": 213240,
+          "likes": 4505,
+          "comments": 477
+        },
+        "vid_1018": {
+          "title": "Kotlin Coroutines Made Easy - Episode #19",
+          "views": 150882,
+          "likes": 5851,
+          "comments": 789
+        },
+        "vid_1019": {
+          "title": "Building Fast Web Apps with Chrome - Episode #20",
+          "views": 424717,
+          "likes": 25769,
+          "comments": 2089
+        },
+        "vid_1020": {
+          "title": "Firebase Realtime Database Setup - Episode #21",
+          "views": 74742,
+          "likes": 3367,
+          "comments": 236
+        },
+        "vid_1021": {
+          "title": "Docker & Kubernetes on GCP - Episode #22",
+          "views": 232715,
+          "likes": 11637,
+          "comments": 1149
+        },
+        "vid_1022": {
+          "title": "Web Vitals and SEO Optimization - Episode #23",
+          "views": 237246,
+          "likes": 7990,
+          "comments": 1137
+        },
+        "vid_1023": {
+          "title": "Next-Gen AI with Gemini API - Episode #24",
+          "views": 63947,
+          "likes": 4018,
+          "comments": 133
+        },
+        "vid_1024": {
+          "title": "Building Fast Web Apps with Chrome - Episode #25",
+          "views": 35083,
+          "likes": 766,
+          "comments": 36
+        },
+        "vid_1025": {
+          "title": "Firebase Realtime Database Setup - Episode #26",
+          "views": 137629,
+          "likes": 10116,
+          "comments": 1500
+        },
+        "vid_1026": {
+          "title": "Building Fast Web Apps with Chrome - Episode #27",
+          "views": 49003,
+          "likes": 3482,
+          "comments": 140
+        },
+        "vid_1027": {
+          "title": "Docker & Kubernetes on GCP - Episode #28",
+          "views": 102584,
+          "likes": 6778,
+          "comments": 718
+        },
+        "vid_1028": {
+          "title": "Web Vitals and SEO Optimization - Episode #29",
+          "views": 153609,
+          "likes": 7057,
+          "comments": 523
+        },
+        "vid_1029": {
+          "title": "Firebase Realtime Database Setup - Episode #30",
+          "views": 263365,
+          "likes": 19323,
+          "comments": 2223
+        },
+        "vid_1030": {
+          "title": "Next-Gen AI with Gemini API - Episode #31",
+          "views": 405929,
+          "likes": 20084,
+          "comments": 1200
+        },
+        "vid_1031": {
+          "title": "Android App Architecture Guide - Episode #32",
+          "views": 102572,
+          "likes": 5238,
+          "comments": 726
+        },
+        "vid_1032": {
+          "title": "Google Cloud Platform Fundamentals - Episode #33",
+          "views": 279895,
+          "likes": 16915,
+          "comments": 2223
+        },
+        "vid_1033": {
+          "title": "Python 3.12 Deep Dive - Episode #34",
+          "views": 18155,
+          "likes": 1060,
+          "comments": 79
+        },
+        "vid_1034": {
+          "title": "Python 3.12 Deep Dive - Episode #35",
+          "views": 151233,
+          "likes": 8930,
+          "comments": 834
+        },
+        "vid_1035": {
+          "title": "Python 3.12 Deep Dive - Episode #36",
+          "views": 106614,
+          "likes": 3204,
+          "comments": 113
+        },
+        "vid_1036": {
+          "title": "Google Cloud Platform Fundamentals - Episode #37",
+          "views": 434757,
+          "likes": 26224,
+          "comments": 2232
+        },
+        "vid_1037": {
+          "title": "Python 3.12 Deep Dive - Episode #38",
+          "views": 43325,
+          "likes": 3418,
+          "comments": 266
+        },
+        "vid_1038": {
+          "title": "Flutter Widget Tutorial - Episode #39",
+          "views": 123638,
+          "likes": 8163,
+          "comments": 478
+        },
+        "vid_1039": {
+          "title": "Building Fast Web Apps with Chrome - Episode #40",
+          "views": 256817,
+          "likes": 9764,
+          "comments": 476
+        },
+        "vid_1040": {
+          "title": "Docker & Kubernetes on GCP - Episode #41",
+          "views": 288622,
+          "likes": 9352,
+          "comments": 854
+        },
+        "vid_1041": {
+          "title": "Modern JavaScript Tips & Tricks - Episode #42",
+          "views": 123252,
+          "likes": 6403,
+          "comments": 632
+        },
+        "vid_1042": {
+          "title": "Web Vitals and SEO Optimization - Episode #43",
+          "views": 220686,
+          "likes": 15942,
+          "comments": 1885
+        },
+        "vid_1043": {
+          "title": "Firebase Realtime Database Setup - Episode #44",
+          "views": 64448,
+          "likes": 1517,
+          "comments": 205
+        },
+        "vid_1044": {
+          "title": "Web Vitals and SEO Optimization - Episode #45",
+          "views": 229835,
+          "likes": 8129,
+          "comments": 604
+        },
+        "vid_1045": {
+          "title": "TensorFlow ML Crash Course - Episode #46",
+          "views": 182304,
+          "likes": 14412,
+          "comments": 753
+        },
+        "vid_1046": {
+          "title": "Docker & Kubernetes on GCP - Episode #47",
+          "views": 119605,
+          "likes": 4409,
+          "comments": 550
+        },
+        "vid_1047": {
+          "title": "Modern JavaScript Tips & Tricks - Episode #48",
+          "views": 214937,
+          "likes": 9989,
+          "comments": 1222
+        },
+        "vid_1048": {
+          "title": "Firebase Realtime Database Setup - Episode #49",
+          "views": 359887,
+          "likes": 8151,
+          "comments": 987
+        },
+        "vid_1049": {
+          "title": "Building Fast Web Apps with Chrome - Episode #50",
+          "views": 127191,
+          "likes": 4288,
+          "comments": 163
+        },
+        "vid_1050": {
+          "title": "TensorFlow ML Crash Course - Episode #51",
+          "views": 388375,
+          "likes": 27613,
+          "comments": 2517
+        },
+        "vid_1051": {
+          "title": "Modern JavaScript Tips & Tricks - Episode #52",
+          "views": 274550,
+          "likes": 7288,
+          "comments": 385
+        },
+        "vid_1052": {
+          "title": "Firebase Realtime Database Setup - Episode #53",
+          "views": 89728,
+          "likes": 6790,
+          "comments": 552
+        },
+        "vid_1053": {
+          "title": "Google Cloud Platform Fundamentals - Episode #54",
+          "views": 55556,
+          "likes": 4070,
+          "comments": 537
+        },
+        "vid_1054": {
+          "title": "Next-Gen AI with Gemini API - Episode #55",
+          "views": 92633,
+          "likes": 6412,
+          "comments": 254
+        },
+        "vid_1055": {
+          "title": "Modern JavaScript Tips & Tricks - Episode #56",
+          "views": 371264,
+          "likes": 18010,
+          "comments": 1220
+        },
+        "vid_1056": {
+          "title": "Modern JavaScript Tips & Tricks - Episode #57",
+          "views": 248062,
+          "likes": 18481,
+          "comments": 2592
+        },
+        "vid_1057": {
+          "title": "Docker & Kubernetes on GCP - Episode #58",
+          "views": 89320,
+          "likes": 3474,
+          "comments": 361
+        },
+        "vid_1058": {
+          "title": "Google Cloud Platform Fundamentals - Episode #59",
+          "views": 409594,
+          "likes": 25597,
+          "comments": 1666
+        },
+        "vid_1059": {
+          "title": "Android App Architecture Guide - Episode #60",
+          "views": 297844,
+          "likes": 19350,
+          "comments": 2861
+        },
+        "vid_1060": {
+          "title": "Firebase Realtime Database Setup - Episode #61",
+          "views": 213405,
+          "likes": 15461,
+          "comments": 1987
+        },
+        "vid_1061": {
+          "title": "Android App Architecture Guide - Episode #62",
+          "views": 136645,
+          "likes": 3979,
+          "comments": 596
+        },
+        "vid_1062": {
+          "title": "Python 3.12 Deep Dive - Episode #63",
+          "views": 164144,
+          "likes": 11918,
+          "comments": 1184
+        },
+        "vid_1063": {
+          "title": "Docker & Kubernetes on GCP - Episode #64",
+          "views": 120648,
+          "likes": 6052,
+          "comments": 508
+        },
+        "vid_1064": {
+          "title": "Google Cloud Platform Fundamentals - Episode #65",
+          "views": 449047,
+          "likes": 26343,
+          "comments": 1140
+        },
+        "vid_1065": {
+          "title": "Firebase Realtime Database Setup - Episode #66",
+          "views": 393509,
+          "likes": 20189,
+          "comments": 843
+        },
+        "vid_1066": {
+          "title": "TensorFlow ML Crash Course - Episode #67",
+          "views": 288780,
+          "likes": 9581,
+          "comments": 422
+        },
+        "vid_1067": {
+          "title": "Firebase Realtime Database Setup - Episode #68",
+          "views": 438097,
+          "likes": 18999,
+          "comments": 2777
+        },
+        "vid_1068": {
+          "title": "Python 3.12 Deep Dive - Episode #69",
+          "views": 187810,
+          "likes": 14135,
+          "comments": 1211
+        },
+        "vid_1069": {
+          "title": "Building Fast Web Apps with Chrome - Episode #70",
+          "views": 364094,
+          "likes": 24291,
+          "comments": 1786
+        },
+        "vid_1070": {
+          "title": "Flutter Widget Tutorial - Episode #71",
+          "views": 193791,
+          "likes": 10246,
+          "comments": 570
+        },
+        "vid_1071": {
+          "title": "TensorFlow ML Crash Course - Episode #72",
+          "views": 81841,
+          "likes": 4968,
+          "comments": 187
+        },
+        "vid_1072": {
+          "title": "Flutter Widget Tutorial - Episode #73",
+          "views": 156135,
+          "likes": 3916,
+          "comments": 431
+        },
+        "vid_1073": {
+          "title": "Kotlin Coroutines Made Easy - Episode #74",
+          "views": 79156,
+          "likes": 2034,
+          "comments": 68
+        },
+        "vid_1074": {
+          "title": "TensorFlow ML Crash Course - Episode #75",
+          "views": 273179,
+          "likes": 12143,
+          "comments": 1292
+        },
+        "vid_1075": {
+          "title": "Kotlin Coroutines Made Easy - Episode #76",
+          "views": 7425,
+          "likes": 253,
+          "comments": 25
+        },
+        "vid_1076": {
+          "title": "Android App Architecture Guide - Episode #77",
+          "views": 87642,
+          "likes": 4304,
+          "comments": 316
+        },
+        "vid_1077": {
+          "title": "Next-Gen AI with Gemini API - Episode #78",
+          "views": 235708,
+          "likes": 13000,
+          "comments": 1761
+        },
+        "vid_1078": {
+          "title": "Google Cloud Platform Fundamentals - Episode #79",
+          "views": 294476,
+          "likes": 7851,
+          "comments": 543
+        },
+        "vid_1079": {
+          "title": "Android App Architecture Guide - Episode #80",
+          "views": 259456,
+          "likes": 6869,
+          "comments": 488
+        },
+        "vid_1080": {
+          "title": "Next-Gen AI with Gemini API - Episode #81",
+          "views": 428508,
+          "likes": 27291,
+          "comments": 2050
+        },
+        "vid_1081": {
+          "title": "TensorFlow ML Crash Course - Episode #82",
+          "views": 263460,
+          "likes": 6580,
+          "comments": 698
+        },
+        "vid_1082": {
+          "title": "TensorFlow ML Crash Course - Episode #83",
+          "views": 120355,
+          "likes": 9454,
+          "comments": 313
+        },
+        "vid_1083": {
+          "title": "Building Fast Web Apps with Chrome - Episode #84",
+          "views": 220749,
+          "likes": 8799,
+          "comments": 376
+        },
+        "vid_1084": {
+          "title": "Building Fast Web Apps with Chrome - Episode #85",
+          "views": 239121,
+          "likes": 16135,
+          "comments": 1127
+        },
+        "vid_1085": {
+          "title": "Firebase Realtime Database Setup - Episode #86",
+          "views": 203392,
+          "likes": 8823,
+          "comments": 373
+        },
+        "vid_1086": {
+          "title": "Firebase Realtime Database Setup - Episode #87",
+          "views": 247071,
+          "likes": 10912,
+          "comments": 858
+        },
+        "vid_1087": {
+          "title": "Flutter Widget Tutorial - Episode #88",
+          "views": 71287,
+          "likes": 2256,
+          "comments": 278
+        },
+        "vid_1088": {
+          "title": "Google Cloud Platform Fundamentals - Episode #89",
+          "views": 43904,
+          "likes": 1426,
+          "comments": 44
+        },
+        "vid_1089": {
+          "title": "Android App Architecture Guide - Episode #90",
+          "views": 314503,
+          "likes": 22096,
+          "comments": 2738
+        },
+        "vid_1090": {
+          "title": "TensorFlow ML Crash Course - Episode #91",
+          "views": 330998,
+          "likes": 23053,
+          "comments": 1679
+        },
+        "vid_1091": {
+          "title": "Python 3.12 Deep Dive - Episode #92",
+          "views": 288593,
+          "likes": 13256,
+          "comments": 1380
+        },
+        "vid_1092": {
+          "title": "TensorFlow ML Crash Course - Episode #93",
+          "views": 270669,
+          "likes": 18831,
+          "comments": 1294
+        },
+        "vid_1093": {
+          "title": "TensorFlow ML Crash Course - Episode #94",
+          "views": 297563,
+          "likes": 20176,
+          "comments": 627
+        },
+        "vid_1094": {
+          "title": "Next-Gen AI with Gemini API - Episode #95",
+          "views": 344009,
+          "likes": 7130,
+          "comments": 774
+        },
+        "vid_1095": {
+          "title": "Next-Gen AI with Gemini API - Episode #96",
+          "views": 79676,
+          "likes": 5793,
+          "comments": 758
+        },
+        "vid_1096": {
+          "title": "TensorFlow ML Crash Course - Episode #97",
+          "views": 431284,
+          "likes": 11501,
+          "comments": 1477
+        },
+        "vid_1097": {
+          "title": "Firebase Realtime Database Setup - Episode #98",
+          "views": 123607,
+          "likes": 6449,
+          "comments": 373
+        },
+        "vid_1098": {
+          "title": "Flutter Widget Tutorial - Episode #99",
+          "views": 401988,
+          "likes": 13116,
+          "comments": 1570
+        },
+        "vid_1099": {
+          "title": "Modern JavaScript Tips & Tricks - Episode #100",
+          "views": 249325,
+          "likes": 9087,
+          "comments": 1113
+        },
+        "vid_1100": {
+          "title": "Next-Gen AI with Gemini API - Episode #101",
+          "views": 361141,
+          "likes": 16962,
+          "comments": 857
+        },
+        "vid_1101": {
+          "title": "Building Fast Web Apps with Chrome - Episode #102",
+          "views": 320931,
+          "likes": 23361,
+          "comments": 2373
+        },
+        "vid_1102": {
+          "title": "Web Vitals and SEO Optimization - Episode #103",
+          "views": 238540,
+          "likes": 18304,
+          "comments": 1660
+        },
+        "vid_1103": {
+          "title": "Google Cloud Platform Fundamentals - Episode #104",
+          "views": 71425,
+          "likes": 1706,
+          "comments": 122
+        },
+        "vid_1104": {
+          "title": "Next-Gen AI with Gemini API - Episode #105",
+          "views": 220081,
+          "likes": 8619,
+          "comments": 967
+        },
+        "vid_1105": {
+          "title": "Web Vitals and SEO Optimization - Episode #106",
+          "views": 335634,
+          "likes": 22873,
+          "comments": 2096
+        },
+        "vid_1106": {
+          "title": "Kotlin Coroutines Made Easy - Episode #107",
+          "views": 288619,
+          "likes": 6764,
+          "comments": 257
+        },
+        "vid_1107": {
+          "title": "Web Vitals and SEO Optimization - Episode #108",
+          "views": 57874,
+          "likes": 1446,
+          "comments": 98
+        },
+        "vid_1108": {
+          "title": "Python 3.12 Deep Dive - Episode #109",
+          "views": 312581,
+          "likes": 7796,
+          "comments": 512
+        },
+        "vid_1109": {
+          "title": "Python 3.12 Deep Dive - Episode #110",
+          "views": 117014,
+          "likes": 6597,
+          "comments": 729
+        },
+        "vid_1110": {
+          "title": "Kotlin Coroutines Made Easy - Episode #111",
+          "views": 162828,
+          "likes": 5585,
+          "comments": 351
+        },
+        "vid_1111": {
+          "title": "Firebase Realtime Database Setup - Episode #112",
+          "views": 220798,
+          "likes": 5615,
+          "comments": 612
+        },
+        "vid_1112": {
+          "title": "TensorFlow ML Crash Course - Episode #113",
+          "views": 204887,
+          "likes": 5537,
+          "comments": 726
+        },
+        "vid_1113": {
+          "title": "Firebase Realtime Database Setup - Episode #114",
+          "views": 138246,
+          "likes": 8444,
+          "comments": 1089
+        },
+        "vid_1114": {
+          "title": "Python 3.12 Deep Dive - Episode #115",
+          "views": 298735,
+          "likes": 20726,
+          "comments": 2755
+        },
+        "vid_1115": {
+          "title": "Flutter Widget Tutorial - Episode #116",
+          "views": 60953,
+          "likes": 4286,
+          "comments": 546
+        },
+        "vid_1116": {
+          "title": "Docker & Kubernetes on GCP - Episode #117",
+          "views": 400183,
+          "likes": 23284,
+          "comments": 2251
+        },
+        "vid_1117": {
+          "title": "Building Fast Web Apps with Chrome - Episode #118",
+          "views": 73072,
+          "likes": 4556,
+          "comments": 192
+        },
+        "vid_1118": {
+          "title": "TensorFlow ML Crash Course - Episode #119",
+          "views": 324640,
+          "likes": 20057,
+          "comments": 631
+        },
+        "vid_1119": {
+          "title": "Web Vitals and SEO Optimization - Episode #120",
+          "views": 323366,
+          "likes": 11956,
+          "comments": 1438
+        }
+      }
+    }
+  ]
+}

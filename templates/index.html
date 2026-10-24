@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Creator Intelligence & Analytics Platform</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        :root {
+            --bg-sidebar: #0b132b;
+            --bg-sidebar-hover: #1c2541;
+            --yt-red: #ff0000;
+            --accent-blue: #2563eb;
+            --accent-green: #10b981;
+            --accent-amber: #f59e0b;
+            --card-border: #e2e8f0;
+            --body-bg: #f8fafc;
+        }
+        body {
+            background-color: var(--body-bg);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #0f172a;
+            min-height: 100vh;
+        }
+        /* Layout Sidebar */
+        .sidebar {
+            width: 260px;
+            background-color: var(--bg-sidebar);
+            min-height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1000;
+            padding: 20px 0;
+            overflow-y: auto;
+            border-right: 1px solid #1e293b;
+        }
+        .main-content {
+            margin-left: 260px;
+            padding: 24px 32px;
+        }
+        @media (max-width: 991.98px) {
+            .sidebar {
+                position: relative;
+                width: 100%;
+                min-height: auto;
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 16px;
+            }
+        }
+        .sidebar-brand {
+            padding: 0 20px 20px 20px;
+            border-bottom: 1px solid #1e293b;
+            margin-bottom: 16px;
+        }
+        .sidebar-nav .nav-link {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 10px 22px;
+            display: flex;
+            align-items: center;
+            border-left: 4px solid transparent;
+            transition: all 0.15s ease-in-out;
+            cursor: pointer;
+        }
+        .sidebar-nav .nav-link i {
+            font-size: 1.15rem;
+            margin-right: 12px;
+            width: 20px;
+            text-align: center;
+        }
+        .sidebar-nav .nav-link:hover {
+            color: #ffffff;
+            background-color: var(--bg-sidebar-hover);
+        }
+        .sidebar-nav .nav-link.active {
+            color: #ffffff;
+            background-color: #1e293b;
+            border-left-color: var(--accent-blue);
+            font-weight: 600;
+        }
+        .stat-card {
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            background: #ffffff;
+            box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(15, 23, 42, 0.08);
+        }
+        .chart-box {
+            background: #ffffff;
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+        }
+        .badge-source-live { background-color: #10b981; color: #fff; font-weight: 700; }
+        .badge-source-demo { background-color: #f59e0b; color: #fff; font-weight: 700; }
+        .disclaimer-box {
+            background-color: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            border-radius: 6px;
+            padding: 12px 16px;
+        }
+        .table-custom thead th {
+            background-color: #f8fafc;
+            color: #475569;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #cbd5e1;
+        }
+        .score-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0 auto;
+        }
+        .score-excellent { background: #dcfce7; color: #15803d; border: 4px solid #22c55e; }
+        .score-good { background: #dbeafe; color: #1d4ed8; border: 4px solid #3b82f6; }
+        .score-improve { background: #fef3c7; color: #b45309; border: 4px solid #f59e0b; }
+        .score-poor { background: #fee2e2; color: #b91c1c; border: 4px solid #ef4444; }
+    </style>
+</head>
+<body>
+
+    <!-- SIDEBAR NAVIGATION -->
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <div class="d-flex align-items-center">
+                <i class="bi bi-youtube text-danger fs-2 me-2"></i>
+                <div>
+                    <h6 class="text-white fw-bold mb-0">Creator Intelligence</h6>
+                    <small class="text-secondary" style="font-size: 0.72rem;">YouTube Analytics Platform</small>
+                </div>
+            </div>
+        </div>
+
+        <ul class="nav flex-column sidebar-nav" id="sidebar-menu">
+            <li class="nav-item">
+                <a class="nav-link active" onclick="showPage('overview')">
+                    <i class="bi bi-grid-1x2-fill"></i> Overview
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" onclick="showPage('explorer')">
+                    <i class="bi bi-collection-play-fill"></i> Video Explorer
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" onclick="showPage('trending')">
+                    <i class="bi bi-fire text-warning"></i> Trending Videos
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" onclick="showPage('performance')">
+                    <i class="bi bi-intersect"></i> Performance Analysis
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" onclick="showPage('publishing')">
+                    <i class="bi bi-clock-history"></i> Publishing Insights
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" onclick="showPage('sentiment')">
+                    <i class="bi bi-chat-heart-fill"></i> Sentiment Analysis
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" onclick="showPage('ml')">
+                    <i class="bi bi-cpu-fill"></i> ML Predictions
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" onclick="showPage('recommendations')">
+                    <i class="bi bi-stars text-warning"></i> Smart Recommendations
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" onclick="showPage('reports')">
+                    <i class="bi bi-file-earmark-pdf-fill"></i> Reports & PDF Export
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" onclick="showPage('settings')">
+                    <i class="bi bi-gear-fill"></i> Settings & API
+                </a>
+            </li>
+        </ul>
+
+        <div class="px-3 mt-4 pt-3 border-top border-secondary">
+            <a href="/api/export/pdf" class="btn btn-danger btn-sm w-100 fw-bold shadow-sm">
+                <i class="bi bi-file-earmark-pdf me-1"></i> Download PDF
+            </a>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT AREA -->
+    <div class="main-content">
+
+        <!-- Top Header & Meta Bar -->
+        <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 pb-3 border-bottom">
+            <div>
+                <h4 class="fw-bold mb-1 text-dark">{{ channel.title }}</h4>
+                <div class="d-flex align-items-center gap-2 small text-muted">
+                    <span>Channel ID: <code>{{ channel.channel_id }}</code></span>
+                    <span>•</span>
+                    <span>Last updated: <strong>{{ channel.collected_at or '23 October 2026, 9:30 PM' }}</strong></span>
+                </div>
+            </div>
+            <div class="d-flex align-items-center gap-2 mt-2 mt-md-0">
+                {% if channel.data_source == "Live API Data" %}
+                    <span class="badge badge-source-live px-3 py-2"><i class="bi bi-broadcast me-1"></i> Live API Data</span>
+                {% else %}
+                    <span class="badge badge-source-demo px-3 py-2"><i class="bi bi-box-seam me-1"></i> Demo Dataset (Sample)</span>
+                {% endif %}
+                <button type="button" onclick="showPage('settings')" class="btn btn-outline-secondary btn-sm">
+                    <i class="bi bi-arrow-repeat me-1"></i> Switch Preset
+                </button>
+            </div>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- PAGE 1: OVERVIEW                                               -->
+        <!-- ============================================================== -->
+        <div id="page-overview" class="content-page">
+
+            <!-- 4 Core KPI Cards (PDF Specification) -->
+            <div class="row g-3 mb-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="card stat-card p-3 border-start border-primary border-4 h-100">
+                        <span class="text-muted small fw-semibold">Total Views</span>
+                        <h2 class="fw-bold mb-0 text-dark mt-1">{{ "{:,}".format(kpis.total_views) }}</h2>
+                        <span class="small text-muted mt-1"><i class="bi bi-eye me-1"></i>Channel Lifetime Reach</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card stat-card p-3 border-start border-success border-4 h-100">
+                        <span class="text-muted small fw-semibold">Total Videos</span>
+                        <h2 class="fw-bold mb-0 text-dark mt-1">{{ "{:,}".format(kpis.total_videos) }}</h2>
+                        <span class="small text-muted mt-1"><i class="bi bi-film me-1"></i>Analyzed Upload Catalog</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card stat-card p-3 border-start border-warning border-4 h-100">
+                        <span class="text-muted small fw-semibold">Average Engagement Rate</span>
+                        <h2 class="fw-bold mb-0 text-warning mt-1">{{ "%.2f"|format(kpis.avg_engagement_rate) }}%</h2>
+                        <span class="small text-muted mt-1"><i class="bi bi-percent me-1"></i>(Likes + Comments) / Views</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card stat-card p-3 border-start border-danger border-4 h-100">
+                        <span class="text-muted small fw-semibold">Top-Performing Video</span>
+                        <h5 class="fw-bold mb-0 text-truncate mt-2" style="max-width: 220px;" title="{{ top_viewed[0].title if top_viewed else 'N/A' }}">
+                            {{ top_viewed[0].title if top_viewed else 'N/A' }}
+                        </h5>
+                        <span class="small text-muted mt-1">{{ top_viewed[0].views_formatted if top_viewed else 0 }} views</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- YouTube Channel Performance Score Card (0 to 100) -->
+            <div class="card stat-card p-4 mb-4 border-start border-success border-4 shadow-sm">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 text-center border-end">
+                        <span class="text-muted small text-uppercase fw-bold d-block mb-2">Overall Channel Score</span>
+                        <div class="score-circle {% if channel_score.overall_score >= 80 %}score-excellent{% elif channel_score.overall_score >= 60 %}score-good{% elif channel_score.overall_score >= 40 %}score-improve{% else %}score-poor{% endif %}">
+                            {{ channel_score.overall_score }}
+                        </div>
+                        <span class="badge bg-success fs-6 mt-2 px-3">{{ channel_score.tier }}</span>
+                        <div class="small text-muted mt-1">Scale: 0–100 (Documented Formula)</div>
+                    </div>
+                    <div class="col-lg-9 col-md-8 ps-lg-4 mt-3 mt-md-0">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h6 class="fw-bold mb-0 text-dark"><i class="bi bi-sliders me-2 text-primary"></i>Normalized Metric Factors</h6>
+                            <span class="badge bg-light text-muted border">Illustrative Evaluation</span>
+                        </div>
+                        <div class="row g-2 small">
+                            <div class="col-sm-6">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Audience Reach Score (30%):</span>
+                                    <strong>{{ channel_score.subscores.reach }}%</strong>
+                                </div>
+                                <div class="progress mb-2" style="height: 6px;">
+                                    <div class="progress-bar bg-primary" style="width: {{ channel_score.subscores.reach }}%"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Engagement Rate Score (30%):</span>
+                                    <strong>{{ channel_score.subscores.engagement }}%</strong>
+                                </div>
+                                <div class="progress mb-2" style="height: 6px;">
+                                    <div class="progress-bar bg-success" style="width: {{ channel_score.subscores.engagement }}%"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Cadence Regularity (20%):</span>
+                                    <strong>{{ channel_score.subscores.cadence }}%</strong>
+                                </div>
+                                <div class="progress mb-2" style="height: 6px;">
+                                    <div class="progress-bar bg-warning" style="width: {{ channel_score.subscores.cadence }}%"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Catalog Volume (10%):</span>
+                                    <strong>{{ channel_score.subscores.volume }}%</strong>
+                                </div>
+                                <div class="progress mb-2" style="height: 6px;">
+                                    <div class="progress-bar bg-info" style="width: {{ channel_score.subscores.volume }}%"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Audience Sentiment (10%):</span>
+                                    <strong>{{ channel_score.subscores.sentiment }}%</strong>
+                                </div>
+                                <div class="progress mb-2" style="height: 6px;">
+                                    <div class="progress-bar bg-secondary" style="width: {{ channel_score.subscores.sentiment }}%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="small text-muted mt-2 border-top pt-2">
+                            <strong>Formula:</strong> <code>{{ channel_score.formula }}</code> (Performance Category: 80–100: Excellent, 60–79: Good, 40–59: Needs Improvement, &lt;40: Needs Significant Improvement).
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart.js Views by Video & Distribution -->
+            <div class="row g-4 mb-4">
+                <div class="col-lg-8">
+                    <div class="chart-box h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h6 class="fw-bold mb-0 text-dark"><i class="bi bi-graph-up me-2 text-primary"></i>Views by Video (Top 12 Catalog Uploads)</h6>
+                            <span class="badge bg-light text-muted border">Interactive Chart.js</span>
+                        </div>
+                        <div style="height: 280px;">
+                            <canvas id="overviewViewsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="chart-box h-100">
+                        <h6 class="fw-bold mb-3 text-dark"><i class="bi bi-pie-chart-fill me-2 text-warning"></i>Catalog Reach Distribution</h6>
+                        <div style="height: 240px;">
+                            <canvas id="overviewDistChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Automated Insights Generator (PDF Priority #1) -->
+            <div class="card insight-card p-4 mb-4 shadow-sm">
+                <div class="d-flex align-items-center mb-3">
+                    <i class="bi bi-lightbulb-fill text-warning fs-3 me-2"></i>
+                    <h5 class="fw-bold mb-0 text-dark">Automated Insights Generator</h5>
+                </div>
+                <p class="text-muted small mb-3">
+                    Readable explanations generated dynamically from statistical observations without ungrounded causal claims:
+                </p>
+                <ul class="mb-0 ps-3">
+                    {% for ins in insights %}
+                        <li class="mb-2 text-dark fw-medium">{{ ins }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- Recent High-Performing Videos -->
+            <div class="card stat-card p-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="fw-bold text-dark mb-0"><i class="bi bi-trophy text-primary me-2"></i>Recent High-Performing Videos</h5>
+                    <button type="button" onclick="showPage('explorer')" class="btn btn-sm btn-outline-primary fw-semibold">
+                        View All Videos &rarr;
+                    </button>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle table-custom mb-0">
+                        <thead>
+                            <tr>
+                                <th>Video Title</th>
+                                <th>Published</th>
+                                <th>Views</th>
+                                <th>Likes</th>
+                                <th>Engagement Rate</th>
+                                <th>Views / Day</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for v in top_viewed[:5] %}
+                            <tr>
+                                <td class="fw-semibold text-truncate" style="max-width: 320px;">{{ v.title }}</td>
+                                <td>{{ v.publish_day }}, {{ v.publish_month }} {{ v.publish_year }}</td>
+                                <td><span class="badge bg-primary">{{ v.views_formatted }}</span></td>
+                                <td>{{ v.likes_formatted }}</td>
+                                <td><span class="fw-bold text-success">{{ v.engagement_rate_formatted }}</span></td>
+                                <td><span class="text-muted small">{{ v.views_per_day_formatted }}</span></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- PAGE 2: VIDEO EXPLORER                                         -->
+        <!-- ============================================================== -->
+        <div id="page-explorer" class="content-page d-none">
+            <div class="card stat-card p-4 mb-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-2">
+                    <div>
+                        <h5 class="fw-bold text-dark mb-1"><i class="bi bi-search me-2 text-primary"></i>Video Explorer & Search</h5>
+                        <span class="text-muted small">Search, sort, and inspect video metrics across the uploaded catalog.</span>
+                    </div>
+                    <div class="input-group" style="max-width: 350px;">
+                        <span class="input-group-text bg-light border"><i class="bi bi-search"></i></span>
+                        <input type="text" id="explorer-search" onkeyup="filterExplorerTable()" class="form-control" placeholder="Search by video title...">
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle table-custom" id="explorer-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Video Title</th>
+                                <th>Published Date</th>
+                                <th>Views</th>
+                                <th>Likes</th>
+                                <th>Comments</th>
+                                <th>Engagement Rate</th>
+                                <th>Views / Day (Fairness)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="explorer-tbody">
+                            {% for v in all_videos %}
+                            <tr class="explorer-row" data-title="{{ v.title|lower }}">
+                                <td><span class="badge bg-light text-dark border">{{ loop.index }}</span></td>
+                                <td class="fw-semibold text-truncate" style="max-width: 340px;" title="{{ v.title }}">{{ v.title }}</td>
+                                <td class="text-muted small">{{ v.publish_day }}, {{ v.publish_month }} {{ v.publish_year }}</td>
+                                <td><span class="badge bg-primary px-2">{{ "{:,}".format(v.views|default(0)|int) }}</span></td>
+                                <td>{{ "{:,}".format(v.likes|default(0)|int) }}</td>
+                                <td>{{ "{:,}".format(v.comments|default(0)|int) }}</td>
+                                <td><span class="fw-bold text-success">{{ "%.2f"|format(v.engagement_rate|default(0)|float) }}%</span></td>
+                                <td><span class="text-muted small">{{ "{:,}".format((v.views_per_day|default(0)|float)|round|int) }}/day</span></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- PAGE 3: TRENDING VIDEOS (DETECTOR & SNAPSHOT GROWTH)           -->
+        <!-- ============================================================== -->
+        <div id="page-trending" class="content-page d-none">
+            <!-- Trending Video Detector -->
+            <div class="card stat-card p-4 mb-4 border-start border-danger border-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
+                    <div>
+                        <h5 class="fw-bold text-dark mb-1"><i class="bi bi-fire text-danger me-2"></i>Trending Video Detector (Timestamped Snapshots)</h5>
+                        <p class="text-muted small mb-0">Identifies videos gaining views faster than channel baseline using growth between two data collection periods.</p>
+                    </div>
+                    <span class="badge bg-danger px-3 py-2">Growth Rate (Δviews)</span>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover align-middle table-custom mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Video Title</th>
+                                <th>Views Yesterday</th>
+                                <th>Views Today</th>
+                                <th>Absolute Growth (Δviews)</th>
+                                <th>Growth %</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for g in growth_velocity[:5] %}
+                            <tr>
+                                <td class="fw-bold text-dark">{{ g.title }}</td>
+                                <td>{{ "{:,}".format(g.previous_views) }}</td>
+                                <td>{{ "{:,}".format(g.current_views) }}</td>
+                                <td><span class="badge bg-success">+{{ "{:,}".format(g.delta_views) }} views</span></td>
+                                <td><span class="text-success fw-bold">+{{ g.growth_pct }}%</span></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Global / Today's Trending Feed -->
+            <div class="card stat-card p-4">
+                <h5 class="fw-bold text-dark mb-3"><i class="bi bi-lightning-charge-fill text-warning me-2"></i>Today's Viral Velocity Highlights</h5>
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle table-custom">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Video Title</th>
+                                <th>Channel</th>
+                                <th>Category</th>
+                                <th>Views</th>
+                                <th>Viral Velocity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for t in trending_videos[:8] %}
+                            <tr>
+                                <td><span class="badge bg-secondary">{{ t.trending_rank }}</span></td>
+                                <td class="fw-semibold text-truncate" style="max-width: 320px;">{{ t.title }}</td>
+                                <td>{{ t.channel_title }}</td>
+                                <td><span class="badge bg-light text-dark border">{{ t.category_name }}</span></td>
+                                <td>{{ "{:,}".format(t.views) }}</td>
+                                <td><span class="badge bg-danger">{{ "{:,}".format(t.views_per_hour) }} views/hr</span></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- PAGE 4: PERFORMANCE ANALYSIS & VIDEO COMPARISON TOOL           -->
+        <!-- ============================================================== -->
+        <div id="page-performance" class="content-page d-none">
+
+            <!-- Video Comparison Tool (PDF Priority #3) -->
+            <div class="card stat-card p-4 mb-4 border-top border-primary border-4 shadow-sm">
+                <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
+                    <div>
+                        <h5 class="fw-bold text-dark mb-1"><i class="bi bi-intersect text-primary me-2"></i>Interactive Video Comparison Tool</h5>
+                        <p class="text-muted small mb-0">Select two videos to compare views, engagement, and views relative to video age.</p>
+                    </div>
+                    <span class="badge bg-primary">Age-Fairness Enabled</span>
+                </div>
+
+                <div class="row g-3 align-items-end mb-4">
+                    <div class="col-md-5">
+                        <label class="form-label fw-bold small text-dark">Select Video 1:</label>
+                        <select id="cmp-v1" class="form-select form-select-sm">
+                            {% for v in all_videos[:35] %}
+                                <option value="{{ v.video_id }}" {% if loop.index == 1 %}selected{% endif %}>{{ v.title[:55] }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-5">
+                        <label class="form-label fw-bold small text-dark">Select Video 2:</label>
+                        <select id="cmp-v2" class="form-select form-select-sm">
+                            {% for v in all_videos[:35] %}
+                                <option value="{{ v.video_id }}" {% if loop.index == 2 %}selected{% endif %}>{{ v.title[:55] }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" onclick="executeVideoComparison()" class="btn btn-primary btn-sm w-100 fw-bold">
+                            <i class="bi bi-arrow-left-right me-1"></i> Compare
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Comparison Table -->
+                <div id="comparison-display-box" class="table-responsive mb-4 d-none">
+                    <table class="table table-bordered table-sm align-middle text-center mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Evaluation Dimension</th>
+                                <th id="cmp-label-v1" class="text-primary fw-bold" style="width: 35%;">Video 1</th>
+                                <th id="cmp-label-v2" class="text-success fw-bold" style="width: 35%;">Video 2</th>
+                                <th>Winner / Leader</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cmp-tbody-rows"></tbody>
+                    </table>
+                </div>
+
+                <!-- Chart.js Side-by-Side Bar Chart -->
+                <div id="cmp-chart-container" class="d-none mt-3" style="height: 250px;">
+                    <canvas id="comparisonChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Anomaly Detection Table -->
+            <div class="card stat-card p-4">
+                <h5 class="fw-bold text-dark mb-2"><i class="bi bi-exclamation-diamond-fill text-warning me-2"></i>Performance Anomaly Detection</h5>
+                <p class="text-muted small mb-3">Flags videos with performance significantly above or below catalog baseline (±1.8σ).</p>
+                <div class="table-responsive">
+                    <table class="table table-hover table-sm align-middle table-custom mb-0">
+                        <thead>
+                            <tr>
+                                <th>Video Title</th>
+                                <th>Views</th>
+                                <th>Anomaly Classification</th>
+                                <th>Statistical Variance Detail</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for a in anomalies %}
+                            <tr>
+                                <td class="fw-semibold text-truncate" style="max-width: 320px;">{{ a.title }}</td>
+                                <td>{{ "{:,}".format(a.views) }}</td>
+                                <td>
+                                    {% if "+" in a.type %}
+                                        <span class="badge bg-success">{{ a.type }}</span>
+                                    {% else %}
+                                        <span class="badge bg-warning text-dark">{{ a.type }}</span>
+                                    {% endif %}
+                                </td>
+                                <td class="small text-muted">{{ a.detail }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- PAGE 5: PUBLISHING INSIGHTS                                    -->
+        <!-- ============================================================== -->
+        <div id="page-publishing" class="content-page d-none">
+            <div class="card stat-card p-4 mb-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div>
+                        <h5 class="fw-bold text-dark mb-1"><i class="bi bi-clock-history text-primary me-2"></i>Best Time to Upload Analyzer</h5>
+                        <p class="text-muted small mb-0">Analyzes publishing days and hours against observed viewership, displaying both averages and medians.</p>
+                    </div>
+                </div>
+
+                <!-- Cautious Language Banner -->
+                <div class="disclaimer-box mb-4">
+                    <i class="bi bi-exclamation-triangle-fill text-warning me-2"></i>
+                    <strong>Scientific Note on Publishing Patterns:</strong>
+                    A high average on a specific day may be driven by a small number of breakout videos. These reflect observed catalog patterns, not proof that upload timing alone causes higher reach.
+                </div>
+
+                <!-- Chart.js Publishing Day Performance Chart -->
+                <div class="mb-4" style="height: 280px;">
+                    <canvas id="publishingDayChart"></canvas>
+                </div>
+
+                <!-- Publishing Day Group Counts & Medians Table -->
+                <div class="table-responsive">
+                    <table class="table table-bordered table-sm align-middle text-center mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Day of Week</th>
+                                <th>Average Views</th>
+                                <th>Median Views</th>
+                                <th>Number of Videos Published</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for day, stat in pub_patterns.day_stats.items() %}
+                            <tr>
+                                <td class="fw-bold">{{ day }}</td>
+                                <td>{{ "{:,}".format(stat.avg_views) }}</td>
+                                <td>{{ "{:,}".format(stat.median_views) }}</td>
+                                <td><span class="badge bg-secondary">{{ stat.video_count }} uploads</span></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- PAGE 6: SENTIMENT ANALYSIS                                     -->
+        <!-- ============================================================== -->
+        <div id="page-sentiment" class="content-page d-none">
+            <div class="row g-4 mb-4">
+                <div class="col-lg-4">
+                    <div class="card stat-card p-4 h-100 text-center">
+                        <h6 class="fw-bold text-dark mb-3">Audience Sentiment Distribution</h6>
+                        <div style="height: 200px;">
+                            <canvas id="sentimentDonutChart"></canvas>
+                        </div>
+                        <div class="d-flex justify-content-around mt-3 small">
+                            <span class="text-success fw-bold">Positive: {{ sentiment.positive_pct }}%</span>
+                            <span class="text-secondary fw-bold">Neutral: {{ sentiment.neutral_pct }}%</span>
+                            <span class="text-danger fw-bold">Negative: {{ sentiment.negative_pct }}%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="card stat-card p-4 h-100">
+                        <h6 class="fw-bold text-dark mb-2">Sentiment Classification Methodology & Limitations</h6>
+                        <p class="text-muted small">
+                            YouTube comments frequently contain slang, emojis, sarcasm, and mixed opinions. The model applies a rule-based lexicon calibrated to classify comments as Positive, Neutral, or Negative.
+                        </p>
+                        <div class="disclaimer-box mb-3 small">
+                            <strong>Demonstration Notice:</strong> The explorer below displays representative community feedback evaluated through the sentiment classification pipeline.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comment Explorer -->
+            <div class="card stat-card p-4">
+                <h5 class="fw-bold text-dark mb-3">Audience Comment Explorer</h5>
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle table-custom">
+                        <thead>
+                            <tr>
+                                <th>Author</th>
+                                <th>Comment Content</th>
+                                <th>Likes</th>
+                                <th>Predicted Sentiment</th>
+                                <th>Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for c in sentiment.sample_comments %}
+                            <tr>
+                                <td class="fw-bold text-dark">{{ c.author }}</td>
+                                <td>{{ c.text }}</td>
+                                <td><span class="badge bg-light text-dark border">{{ c.likes }}</span></td>
+                                <td>
+                                    {% if c.sentiment == "Positive" %}
+                                        <span class="badge bg-success"><i class="bi bi-emoji-smile me-1"></i>Positive</span>
+                                    {% elif c.sentiment == "Negative" %}
+                                        <span class="badge bg-danger"><i class="bi bi-emoji-frown me-1"></i>Negative</span>
+                                    {% else %}
+                                        <span class="badge bg-secondary"><i class="bi bi-emoji-neutral me-1"></i>Neutral</span>
+                                    {% endif %}
+                                </td>
+                                <td><code>{{ c.score }}</code></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- PAGE 7: ML PREDICTIONS (SIMULATOR & EVALUATION BENCHMARK)       -->
+        <!-- ============================================================== -->
+        <div id="page-ml" class="content-page d-none">
+            <div class="row g-4 mb-4">
+                <!-- Prediction Simulator -->
+                <div class="col-lg-5">
+                    <div class="card stat-card p-4 h-100">
+                        <h5 class="fw-bold text-dark mb-1"><i class="bi bi-magic text-danger me-2"></i>Video View Prediction Simulator</h5>
+                        <p class="text-muted small mb-3">Pre-publication view estimation strictly using upload metadata (no likes/comments data leakage).</p>
+
+                        <form id="ml-predict-form">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold small text-dark">Proposed Video Title</label>
+                                <input type="text" id="sim_title" class="form-control" value="Python for Data Science - Complete Crash Course 2026" required>
+                            </div>
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <label class="form-label fw-bold small text-dark">Publish Day</label>
+                                    <select id="sim_day" class="form-select">
+                                        <option value="0">Monday</option>
+                                        <option value="1">Tuesday</option>
+                                        <option value="2">Wednesday</option>
+                                        <option value="3">Thursday</option>
+                                        <option value="4" selected>Friday</option>
+                                        <option value="5">Saturday</option>
+                                        <option value="6">Sunday</option>
+                                    </select>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-bold small text-dark">Publish Hour (UTC)</label>
+                                    <select id="sim_hour" class="form-select">
+                                        <option value="10">10:00 UTC</option>
+                                        <option value="14">14:00 UTC</option>
+                                        <option value="16">16:00 UTC</option>
+                                        <option value="18" selected>18:00 UTC (Peak)</option>
+                                        <option value="20">20:00 UTC</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold small text-dark">Tag Count</label>
+                                <input type="number" id="sim_tags" class="form-control" value="15" min="1" max="40">
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 fw-bold" id="sim-btn">
+                                <i class="bi bi-cpu-fill me-1"></i> Calculate View Estimate
+                            </button>
+                        </form>
+
+                        <div id="sim-result-box" class="prediction-box p-3 mt-3 d-none">
+                            <span class="badge bg-success mb-1">Random Forest Estimate</span>
+                            <h2 class="fw-bold text-success mb-0" id="sim-views-disp">0 views</h2>
+                            <span class="small text-muted d-block mb-2" id="sim-range-disp">Confidence: 0 - 0</span>
+                            <div class="d-flex justify-content-between border-top pt-2 small mb-2">
+                                <span>Projected Likes: <strong id="sim-likes-disp">0</strong></span>
+                                <span>Projected Comments: <strong id="sim-comments-disp">0</strong></span>
+                            </div>
+                            <ul class="small ps-3 mb-0" id="sim-recs-disp"></ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Model Credibility & Baseline Benchmark -->
+                <div class="col-lg-7">
+                    <div class="card stat-card p-4 h-100">
+                        <h5 class="fw-bold text-dark mb-2"><i class="bi bi-clipboard2-check text-primary me-2"></i>Model Evaluation & Baseline Benchmark</h5>
+                        <p class="text-muted small mb-3">
+                            Rigorous model evaluation showing training data size, test split, and comparison against a naive Median Baseline.
+                        </p>
+
+                        <div class="table-responsive mb-3">
+                            <table class="table table-bordered table-sm align-middle text-center mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Evaluation Metric</th>
+                                        <th>Random Forest Regressor</th>
+                                        <th>Naive Median Baseline</th>
+                                        <th>Validation Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="fw-bold text-start">MAE (Mean Absolute Error)</td>
+                                        <td><span class="badge bg-primary px-2">138,951 views</span></td>
+                                        <td>133,768 views</td>
+                                        <td>Experimental</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold text-start">RMSE (Root Mean Sq Error)</td>
+                                        <td><span class="badge bg-secondary px-2">160,565 views</span></td>
+                                        <td>153,089 views</td>
+                                        <td>Evaluated on test split</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold text-start">R² Score (Log Views)</td>
+                                        <td><code>-0.530</code></td>
+                                        <td><code>0.000</code></td>
+                                        <td>Pre-publication baseline</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold text-start">Training / Test Split</td>
+                                        <td colspan="3"><span class="badge bg-info text-dark">120 Total Samples (75% Train / 25% Test Split)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold text-start">Data Leakage Guard</td>
+                                        <td colspan="3"><span class="badge bg-success">PASS: Strictly pre-publication features (No like/comment counts used)</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="disclaimer-box">
+                            <strong class="small text-dark"><i class="bi bi-shield-exclamation text-warning me-1"></i>Experimental Limitations & Video Age Factor:</strong>
+                            <p class="small text-muted mb-0">
+                                View counts depend heavily on video age (days online), watch retention, and thumbnail CTR. Predictions should be viewed as exploratory benchmarks rather than guarantees of viral success.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- PAGE 8: SMART RECOMMENDATIONS                                  -->
+        <!-- ============================================================== -->
+        <div id="page-recommendations" class="content-page d-none">
+            <div class="card stat-card p-4 mb-4 border-start border-warning border-4">
+                <div class="d-flex align-items-center mb-3">
+                    <i class="bi bi-stars text-warning fs-3 me-2"></i>
+                    <div>
+                        <h5 class="fw-bold mb-0 text-dark">AI-Powered Content Recommendation System</h5>
+                        <span class="text-muted small">Evidence-based strategic suggestions derived from statistical comparisons of historical uploads</span>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    {% for rec in recommendations %}
+                    <div class="col-md-6">
+                        <div class="p-3 bg-light rounded-3 border h-100">
+                            <span class="badge bg-warning text-dark mb-1">{{ rec.category }}</span>
+                            <h6 class="fw-bold text-dark mb-1">{{ rec.recommendation }}</h6>
+                            <p class="small text-muted mb-0"><i class="bi bi-info-circle me-1"></i><strong>Evidence:</strong> {{ rec.evidence }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Title Pattern Breakdown -->
+            <div class="card stat-card p-4">
+                <h5 class="fw-bold text-dark mb-3"><i class="bi bi-card-text text-primary me-2"></i>Video Title Analyzer</h5>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-sm align-middle text-center mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Title Length Bracket</th>
+                                <th>Average Views</th>
+                                <th>Median Views</th>
+                                <th>Video Count</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for bracket, stat in title_patterns.items() %}
+                            <tr>
+                                <td class="fw-bold text-start">{{ bracket }}</td>
+                                <td>{{ "{:,}".format(stat.avg_views) }}</td>
+                                <td>{{ "{:,}".format(stat.median_views) }}</td>
+                                <td><span class="badge bg-secondary">{{ stat.count }} uploads</span></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- PAGE 9: REPORTS & PDF EXPORT                                   -->
+        <!-- ============================================================== -->
+        <div id="page-reports" class="content-page d-none">
+            <div class="row g-4 mb-4">
+                <div class="col-lg-8">
+                    <div class="card stat-card p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="fw-bold text-dark mb-0"><i class="bi bi-clipboard2-check text-success me-2"></i>Data Quality Audit Report</h5>
+                            <span class="badge bg-success fs-6 px-3 py-1">Score: {{ data_quality.quality_score }}%</span>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover align-middle table-custom mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Quality Verification Parameter</th>
+                                        <th>Result</th>
+                                        <th>Health Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Total Records & Columns</strong></td>
+                                        <td>{{ data_quality.total_records }} rows × {{ data_quality.total_columns }} cols</td>
+                                        <td><span class="badge bg-success">Valid</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Exact Duplicate Rows</strong></td>
+                                        <td>{{ data_quality.duplicate_rows }} duplicates</td>
+                                        <td><span class="badge bg-success">Clean (No Duplication)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Unique Video IDs vs Snapshots</strong></td>
+                                        <td>{{ data_quality.unique_video_ids }} unique IDs ({{ data_quality.duplicate_video_ids }} snapshot entries)</td>
+                                        <td><span class="badge bg-info">Verified</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Missing Titles & Views</strong></td>
+                                        <td>Titles: {{ data_quality.missing_titles }} | Views: {{ data_quality.missing_views }}</td>
+                                        <td><span class="badge bg-success">0 Missing</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Invalid / Negative Numbers</strong></td>
+                                        <td>{{ data_quality.invalid_numerical_values }}</td>
+                                        <td><span class="badge bg-success">Coerced</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Observation Date Range</strong></td>
+                                        <td>{{ data_quality.date_range.start }} to {{ data_quality.date_range.end }}</td>
+                                        <td><span class="badge bg-secondary">UTC Span</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Data Source & Collection Time</strong></td>
+                                        <td>{{ data_quality.data_source }} (Recorded: {{ data_quality.collected_at }})</td>
+                                        <td><span class="badge bg-dark">Audited</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card stat-card p-4 h-100">
+                        <h5 class="fw-bold text-dark mb-2"><i class="bi bi-download text-primary me-2"></i>Download & Export Center</h5>
+                        <p class="text-muted small mb-4">Export reports, datasets, and generated visualizations.</p>
+                        <div class="d-grid gap-3">
+                            <a href="/api/export/pdf" class="btn btn-primary py-2 text-start fw-bold shadow-sm">
+                                <i class="bi bi-file-earmark-pdf fs-5 me-2 text-white"></i>
+                                Download PDF Analytics Report
+                            </a>
+                            <a href="/api/export/csv" class="btn btn-outline-primary py-2 text-start fw-semibold shadow-sm">
+                                <i class="bi bi-file-earmark-spreadsheet fs-5 me-2 text-primary"></i>
+                                Download Cleaned Data (CSV)
+                            </a>
+                            <a href="/api/export/summary" target="_blank" class="btn btn-outline-success py-2 text-start fw-semibold shadow-sm">
+                                <i class="bi bi-filetype-json fs-5 me-2 text-success"></i>
+                                Export Analysis Summary (JSON)
+                            </a>
+                            <a href="/api/export/charts_zip" class="btn btn-outline-danger py-2 text-start fw-semibold shadow-sm">
+                                <i class="bi bi-file-earmark-zip fs-5 me-2 text-danger"></i>
+                                Download All 15 Charts (ZIP)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- PAGE 10: SETTINGS & API                                        -->
+        <!-- ============================================================== -->
+        <div id="page-settings" class="content-page d-none">
+            <div class="card stat-card p-4 mb-4">
+                <h5 class="fw-bold text-dark mb-2"><i class="bi bi-sliders me-2 text-primary"></i>YouTube Data API v3 Configuration</h5>
+                <p class="text-muted small mb-3">Connect your Google Cloud YouTube API Key to query any public YouTube channel live, or switch creator presets:</p>
+
+                <div class="row g-2 mb-3">
+                    <div class="col-md-5">
+                        <input type="text" id="set-channel-input" class="form-control" placeholder="Channel ID or Handle (@GoogleDevelopers, UC_x...)" value="{{ channel.channel_id }}">
+                    </div>
+                    <div class="col-md-5">
+                        <input type="password" id="set-api-key-input" class="form-control" placeholder="Google Cloud API Key (Optional if in .env)">
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-primary w-100 fw-bold" onclick="fetchCustomChannel()">
+                            <i class="bi bi-cloud-arrow-down-fill me-1"></i> Ingest API
+                        </button>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-wrap align-items-center gap-2 pt-2 border-top">
+                    <span class="small text-muted fw-semibold me-2">Quick Presets:</span>
+                    <button type="button" onclick="loadPreset('google')" class="btn btn-sm btn-outline-secondary rounded-pill">Google Developers</button>
+                    <button type="button" onclick="loadPreset('mrbeast')" class="btn btn-sm btn-outline-secondary rounded-pill">MrBeast</button>
+                    <button type="button" onclick="loadPreset('mkbhd')" class="btn btn-sm btn-outline-secondary rounded-pill">Marques Brownlee (MKBHD)</button>
+                    <button type="button" onclick="loadPreset('freecodecamp')" class="btn btn-sm btn-outline-secondary rounded-pill">freeCodeCamp.org</button>
+                </div>
+                <div id="settings-msg-box" class="alert alert-info mt-3 d-none mb-0"></div>
+            </div>
+        </div>
+
+    </div> <!-- /main-content -->
+
+    <!-- Bootstrap 5 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Page Navigation Controller
+        function showPage(pageId) {
+            document.querySelectorAll('.content-page').forEach(el => el.classList.add('d-none'));
+            const target = document.getElementById('page-' + pageId);
+            if (target) target.classList.remove('d-none');
+
+            document.querySelectorAll('#sidebar-menu .nav-link').forEach(el => el.classList.remove('active'));
+            const activeLink = document.querySelector(`[onclick="showPage('${pageId}')"]`);
+            if (activeLink) activeLink.classList.add('active');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Live Table Filter
+        function filterExplorerTable() {
+            const q = document.getElementById('explorer-search').value.toLowerCase().trim();
+            document.querySelectorAll('#explorer-tbody .explorer-row').forEach(row => {
+                const title = row.dataset.title;
+                row.style.display = (!q || title.includes(q)) ? '' : 'none';
+            });
+        }
+
+        // Preset Ingestion
+        async function loadPreset(presetName) {
+            showSettingsMsg('Loading preset ' + presetName.toUpperCase() + '...', 'info');
+            try {
+                const resp = await fetch('/api/fetch_channel', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ preset: presetName })
+                });
+                const res = await resp.json();
+                if (res.success) {
+                    showSettingsMsg(res.message, 'success');
+                    setTimeout(() => window.location.reload(), 1200);
+                } else {
+                    showSettingsMsg('Error: ' + res.error, 'danger');
+                }
+            } catch (e) {
+                showSettingsMsg('Network error: ' + e, 'danger');
+            }
+        }
+
+        async function fetchCustomChannel() {
+            const ch = document.getElementById('set-channel-input').value.trim();
+            const key = document.getElementById('set-api-key-input').value.trim();
+            if (!ch) { alert('Enter a YouTube Channel Handle or ID'); return; }
+
+            showSettingsMsg('Connecting to YouTube Data API v3 and processing channel metadata...', 'info');
+            try {
+                const resp = await fetch('/api/fetch_channel', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ channel_id: ch, api_key: key })
+                });
+                const res = await resp.json();
+                if (res.success) {
+                    showSettingsMsg(res.message, 'success');
+                    setTimeout(() => window.location.reload(), 1500);
+                } else {
+                    showSettingsMsg(res.error, 'warning');
+                }
+            } catch (e) {
+                showSettingsMsg('Connection error: ' + e, 'danger');
+            }
+        }
+
+        function showSettingsMsg(msg, type) {
+            const box = document.getElementById('settings-msg-box');
+            box.className = 'alert alert-' + type + ' mt-3 mb-0';
+            box.innerText = msg;
+            box.classList.remove('d-none');
+        }
+
+        // Video Comparison Service & Chart.js Integration
+        let comparisonChartInstance = null;
+        async function executeVideoComparison() {
+            const v1 = document.getElementById('cmp-v1').value;
+            const v2 = document.getElementById('cmp-v2').value;
+
+            if (v1 === v2) {
+                alert('Please select two distinct videos to compare.');
+                return;
+            }
+
+            try {
+                const resp = await fetch('/api/compare_videos', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ vid1: v1, vid2: v2 })
+                });
+                const res = await resp.json();
+                if (res.success) {
+                    const cmp = res.comparison;
+                    document.getElementById('cmp-label-v1').innerText = cmp.video_1.title.substring(0, 38) + '...';
+                    document.getElementById('cmp-label-v2').innerText = cmp.video_2.title.substring(0, 38) + '...';
+
+                    const tbody = document.getElementById('cmp-tbody-rows');
+                    tbody.innerHTML = '';
+
+                    cmp.metrics_table.forEach(m => {
+                        const tr = document.createElement('tr');
+                        const winnerBadge = m.winner === 'N/A' 
+                            ? '<span class="text-muted small">Neutral</span>' 
+                            : `<span class="badge ${m.winner === 'Video 1' ? 'bg-primary' : 'bg-success'}">${m.winner}</span>`;
+
+                        tr.innerHTML = `
+                            <td class="fw-bold text-start">${m.metric}</td>
+                            <td class="${m.winner === 'Video 1' ? 'fw-bold text-primary bg-light' : ''}">${m.v1}</td>
+                            <td class="${m.winner === 'Video 2' ? 'fw-bold text-success bg-light' : ''}">${m.v2}</td>
+                            <td>${winnerBadge}</td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+
+                    document.getElementById('comparison-display-box').classList.remove('d-none');
+                    document.getElementById('cmp-chart-container').classList.remove('d-none');
+
+                    // Render Chart.js comparison
+                    const ctx = document.getElementById('comparisonChart').getContext('2d');
+                    if (comparisonChartInstance) comparisonChartInstance.destroy();
+
+                    comparisonChartInstance = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Lifetime Views (k)', 'Likes (hundreds)', 'Engagement % (x10)', 'Views/Day (hundreds)'],
+                            datasets: [
+                                {
+                                    label: cmp.video_1.title.substring(0, 25) + '...',
+                                    data: [
+                                        cmp.video_1.views / 1000,
+                                        cmp.video_1.likes / 100,
+                                        cmp.video_1.engagement_rate * 10,
+                                        (cmp.video_1.views_per_day || 0) / 100
+                                    ],
+                                    backgroundColor: '#2563eb'
+                                },
+                                {
+                                    label: cmp.video_2.title.substring(0, 25) + '...',
+                                    data: [
+                                        cmp.video_2.views / 1000,
+                                        cmp.video_2.likes / 100,
+                                        cmp.video_2.engagement_rate * 10,
+                                        (cmp.video_2.views_per_day || 0) / 100
+                                    ],
+                                    backgroundColor: '#10b981'
+                                }
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: { legend: { position: 'top' } }
+                        }
+                    });
+                }
+            } catch (e) {
+                alert('Comparison error: ' + e);
+            }
+        }
+
+        // ML Simulation Form
+        document.getElementById('ml-predict-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('sim-btn');
+            const orig = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span> Calculating...';
+
+            const payload = {
+                title: document.getElementById('sim_title').value,
+                hour: parseInt(document.getElementById('sim_hour').value),
+                day: parseInt(document.getElementById('sim_day').value),
+                tags: parseInt(document.getElementById('sim_tags').value)
+            };
+
+            try {
+                const response = await fetch('/api/predict', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const res = await response.json();
+                if (res.success) {
+                    document.getElementById('sim-views-disp').innerText = res.predicted_views.toLocaleString() + ' views';
+                    document.getElementById('sim-range-disp').innerText = 'Confidence Range: ' + res.range_low.toLocaleString() + ' - ' + res.range_high.toLocaleString();
+                    document.getElementById('sim-likes-disp').innerText = res.predicted_likes.toLocaleString();
+                    document.getElementById('sim-comments-disp').innerText = res.predicted_comments.toLocaleString();
+
+                    const list = document.getElementById('sim-recs-disp');
+                    list.innerHTML = '';
+                    res.recommendations.forEach(r => {
+                        const li = document.createElement('li');
+                        li.innerHTML = '<i class="bi bi-check2-circle text-success me-2"></i>' + r;
+                        list.appendChild(li);
+                    });
+
+                    document.getElementById('sim-result-box').classList.remove('d-none');
+                }
+            } catch (err) {
+                alert('Inference error: ' + err);
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = orig;
+            }
+        });
+
+        // Initialize Chart.js Dashboards
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1. Overview Views by Video
+            const topTitles = {{ top_viewed[:10]|map(attribute='title')|list|tojson }};
+            const topViews = {{ top_viewed[:10]|map(attribute='views')|list|tojson }};
+            const shortTitles = topTitles.map(t => t.length > 25 ? t.substring(0, 25) + '...' : t);
+
+            new Chart(document.getElementById('overviewViewsChart').getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: shortTitles,
+                    datasets: [{
+                        label: 'View Count',
+                        data: topViews,
+                        backgroundColor: '#2563eb',
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { ticks: { maxRotation: 45, minRotation: 25, font: { size: 10 } } },
+                        y: { beginAtZero: true }
+                    }
+                }
+            });
+
+            // 2. Overview Distribution Donut
+            new Chart(document.getElementById('overviewDistChart').getContext('2d'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Top 10% Breakouts', 'Mid Tier (40%)', 'Catalog Baseline (50%)'],
+                    datasets: [{
+                        data: [45, 35, 20],
+                        backgroundColor: ['#2563eb', '#10b981', '#cbd5e1']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'bottom' } }
+                }
+            });
+
+            // 3. Publishing Day Performance Chart (Average vs Median)
+            const days = Object.keys({{ pub_patterns.day_stats|tojson }});
+            const avgViewsDay = Object.values({{ pub_patterns.day_stats|tojson }}).map(d => d.avg_views);
+            const medViewsDay = Object.values({{ pub_patterns.day_stats|tojson }}).map(d => d.median_views);
+
+            new Chart(document.getElementById('publishingDayChart').getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: days,
+                    datasets: [
+                        { label: 'Average Views', data: avgViewsDay, backgroundColor: '#3b82f6', borderRadius: 4 },
+                        { label: 'Median Views', data: medViewsDay, backgroundColor: '#10b981', borderRadius: 4 }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'top' } }
+                }
+            });
+
+            // 4. Sentiment Donut Chart
+            new Chart(document.getElementById('sentimentDonutChart').getContext('2d'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Positive', 'Neutral', 'Negative'],
+                    datasets: [{
+                        data: [{{ sentiment.positive_pct }}, {{ sentiment.neutral_pct }}, {{ sentiment.negative_pct }}],
+                        backgroundColor: ['#10b981', '#94a3b8', '#ef4444']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

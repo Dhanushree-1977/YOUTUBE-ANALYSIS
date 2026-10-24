@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "youtube-analytics-platform"
+version = "1.0.0"
+description = "An interactive data analytics and machine-learning system for video performance analysis, audience sentiment, and data-driven content insights."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Dhanushree-1977", email = "dhanushreevm63@gmail.com" }
+]
+keywords = [
+    "youtube",
+    "youtube-api",
+    "data-analytics",
+    "machine-learning",
+    "flask",
+    "sentiment-analysis",
+    "data-science",
+    "dashboard"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Internet :: WWW/HTTP :: WSGI :: Application"
+]
+dependencies = [
+    "google-api-python-client>=2.100.0",
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "matplotlib>=3.7.0",
+    "seaborn>=0.12.0",
+    "python-dotenv>=1.0.0",
+    "scikit-learn>=1.3.0",
+    "flask>=3.0.0",
+    "reportlab>=4.0.0",
+    "gunicorn>=21.2.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/Dhanushree-1977/YOUTUBE-ANALYSIS"
+Repository = "https://github.com/Dhanushree-1977/YOUTUBE-ANALYSIS.git"
+Issues = "https://github.com/Dhanushree-1977/YOUTUBE-ANALYSIS/issues"
+
+[project.scripts]
+youtube-analytics = "run_project:main"
